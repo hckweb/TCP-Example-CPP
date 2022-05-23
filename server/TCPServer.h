@@ -13,6 +13,7 @@ public:
 private:
     uint16_t port;
     std::string (*read_callback)(std::string);
+    int listener;
 };
 
 #endif
