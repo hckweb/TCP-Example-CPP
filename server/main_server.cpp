@@ -11,9 +11,17 @@ std::string callback(std::string data)
     return std::string(json_data);
 }
 
+std::string callback2(std::string data)
+{
+    std::cout << "Income data2: " << data << std::endl;
+    return std::string(json_data);
+}
+
 int main()
 {
-    TCPServer a(3642, callback);
+    TCPServer server(3642, callback);
+
+    TCPServer server2(3641, callback2);
 
     while (1)
         ;
