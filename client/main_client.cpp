@@ -2,12 +2,15 @@
 
 #include <iostream>
 
+constexpr char json_data[] = "{\"command\": \"read data\"}";
+
 int main()
 {
-    Client c("127.0.0.1", 3642);
+    Client client("127.0.0.1", 3642);
 
-    c.send("DATA");
-    std::cout << c.read() << "\n";
+    client.send(std::string(json_data));
+
+    std::cout << client.read() << "\n";
 
     while (1)
         ;
